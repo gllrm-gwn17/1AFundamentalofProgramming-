@@ -1,0 +1,20 @@
+public class Assignment3 {
+    public static void main(String[]args){
+
+        String Firstname = " Gwen ";  // Here I use String for first name
+        String Lastname = " Guillermo ";  // Here I also use String for last name
+        String Address = " Urdaneta City ";  // For address, I use String
+        String MobileNumber = " 09270769125 "; // I also use String here
+        int Age = 23;  // I use int for age
+        double GWA = 93; // For GWA, I use double
+
+        //Next is will print the output
+        System.out.println( " Firstname: " + Firstname );
+        System.out.println( " Lastname: " + Lastname );
+        System.out.println( " Address: " + Address );
+        System.out.println( " Mobile Number: " + MobileNumber );
+        System.out.println( " Age: " + Age );
+        System.out.println( " GWA: " + GWA );
+
+    }
+}
