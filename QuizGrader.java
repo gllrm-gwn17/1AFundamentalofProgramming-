@@ -8,64 +8,56 @@ public class QuizGrader {
         sa array ang mga sagot ng mga estyudante */
 
         int correctCount = 0; // Sa line na to nagsisimula sa zero ang bilang ng tamang sagot
-
-        // Nagpapakita ng heading para sa quiz results
-        System.out.println("--- Quiz Results ---");
-
-        // Inuulit ang code para ma-check ang lahat ng questions
-        for (int i = 0; i < answerKey.length; i++) {
-
-            // Ginagawang uppercase ang sagot ng student para hindi mahalaga kung lowercase ito
-            char studentAnswer = Character.toUpperCase(studentAnswers[i]);
-
-            // Ginagawang uppercase din ang tamang sagot
-            char correctAnswer = Character.toUpperCase(answerKey[i]);
-
-            // Sinusuri kung magkapareho ang sagot ng student at tamang sagot
-            if (studentAnswer == correctAnswer) {
-
-                // Dinadagdagan ng isa ang bilang ng tamang sagot
-                correctCount++;
-
-                // Ipinapakita na tama ang sagot sa question na ito
-                System.out.println("Question " + (i + 1) + ": Correct!");
+        
+        System.out.println("--- Quiz Results ---"); // Ito naman ang magprint ng heading natin na Quiz Results
+       
+        for (int i = 0; i < answerKey.length; i++) { // Dito inuulit ulit ang code para macheck lahat ng tanong
+            
+            char studentAnswer = Character.toUpperCase(studentAnswers[i]); /* Ginagawang uppercase ang sagot ng estyudante
+              kung lowercase ito */
+            
+            char correctAnswer = Character.toUpperCase(answerKey[i]);  // Ginagawang uppercase din ang tamang sagot
+            
+            if (studentAnswer == correctAnswer) { /* Sa linyang ito sinusuri kung magkapareho ba ang sagot ng 
+                // estyudante at tamang sagot */
+                
+                correctCount++; // Dinadagdagan ng isa ang bilang ng tamang sagot
+                
+                System.out.println("Question " + (i + 1) + ": Correct!"); /* Dito ipinapakita na tama ang sagot 
+                sa tanong na ito */
             }
+            
+            else { // Kapag hindi magkapareho ang sagot
 
-            // Kapag hindi magkapareho ang sagot
-            else {
-
-                // Ipinapakita ang question number, sagot ng student, at tamang sagot
+                // Ipinapakita dito ang bilang ng mga tanong, sagot ng estyudante, at tamang sagot
                 System.out.println("Question " + (i + 1) + ": Incorrect. You answered '" + studentAnswer + "', correct answer is '" + correctAnswer + "'.");
+                
             }
         }
 
-        // Kinukuha ang kabuuang bilang ng questions
-        int totalQuestions = answerKey.length;
+        
+        int totalQuestions = answerKey.length; // Kinukuha ang lahat ng bilang ng questions
 
-        // Kinukuha ang percentage ng tamang sagot
-        double scorePercentage = ((double) correctCount / totalQuestions) * 100;
+        
+        double scorePercentage = ((double) correctCount / totalQuestions) * 100; // Kinukuha ang percentage ng tamang sagot
+        
+        System.out.println("\n--- Final Score ---"); // Dito ipapakita ng heading para sa final score
+        
+        System.out.println("Correct Answers: " + correctCount + "/" + totalQuestions);  /* Ipinapakita ang bilang ng tamang
+         sagot at kabuuang questions */
+        
+        System.out.println("Score Percentage: " + scorePercentage + "%"); // Ipinapakita ang score ng student bilang percentage
+        
+        if (scorePercentage >= 70.0) { // Sa linya na ito sinusuri kung ang score ay 70 percent pataas
 
-        // Nagpapakita ng heading para sa final score
-        System.out.println("\n--- Final Score ---");
-
-        // Ipinapakita ang bilang ng tamang sagot at kabuuang questions
-        System.out.println("Correct Answers: " + correctCount + "/" + totalQuestions);
-
-        // Ipinapakita ang score ng student bilang percentage
-        System.out.println("Score Percentage: " + scorePercentage + "%");
-
-        // Sinusuri kung ang score ay 70 percent pataas
-        if (scorePercentage >= 70.0) {
-
-            // Ipinapakita na pasado ang student
-            System.out.println("Result: PASS");
+            
+            System.out.println("Result: PASS"); // Dito ipinapakita na pasado ang student
         }
+        
+        else { // Kapag mas mababa sa 70 percent ang score
 
-        // Kapag mas mababa sa 70 percent ang score
-        else {
-
-            // Ipinapakita na bagsak ang student
-            System.out.println("Result: FAIL"); 
+            
+            System.out.println("Result: FAIL"); // Dito ipinapakita na bagsak ang student
         }
     }
 }
