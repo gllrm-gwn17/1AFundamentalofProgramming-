@@ -25,17 +25,17 @@ public class CoffeeShopAnalyzer {
             para ma-total lahat */
         }
 
-        // Kinukuha ang average sales sa pamamagitan ng total na hinati sa 7 araw
-        double averageSales = (double) totalSales / weeklySales.length;
+        double averageSales = (double) totalSales / weeklySales.length; /* Kinukuha ang average sales gamit ang total
+        ng lahat na araw at hinati ito sa pitong araw */
 
-        // Nagpapakita ng heading para sa weekly summary
-        System.out.println("\n--- Weekly Summary ---");
+        System.out.println("\n--- Weekly Summary ---"); /* Ito naman ang magprint ng heading natin para sa
+         weekly summary */
 
-        // Ipinapakita ang total sales sa buong linggo
-        System.out.println("Total Sales: " + totalSales + " cups");
+        System.out.println("Total Sales: " + totalSales + " cups"); /* Ito naman ang magprint ng total sales natin
+         sa buong linggo*/
 
-        // Ipinapakita ang average sales bawat araw
-        System.out.println("Average Daily Sales: " + averageSales + " cups");
+        System.out.println("Average Daily Sales: " + averageSales + " cups"); /* Ipapakita naman nito ang average
+         sales ng bawat araw */
 
         // Ginagawang unang sales number ang panimulang pinakamataas na sales
         int maxSales = weeklySales[0];
@@ -73,13 +73,13 @@ public class CoffeeShopAnalyzer {
             }
         }
 
-        // Nagpapakita ng heading para sa pinakamataas at pinakamababang sales
-        System.out.println("\n--- Bests and Worsts ---");
 
-        // Ipinapakita kung anong araw ang may pinakamataas na sales
-        System.out.println("Best day was " + bestDay + " with " + maxSales + " cups.");
+        System.out.println("\n--- Bests and Worsts ---"); /* Ito naman ang magprint ng heading natin na Bests and Worsts */
 
-        // Ipinapakita kung anong araw ang may pinakamababang sales
-        System.out.println("Slowest day was " + worstDay + " with " + minSales + " cups.");
+        System.out.println("Best day was " + bestDay + " with " + maxSales + " cups."); /* Dito ipapakita kung anong
+         araw ang may pinakamataas na sales*/
+
+        System.out.println("Slowest day was " + worstDay + " with " + minSales + " cups."); /* Dito ipapakita kung
+         anong araw ang may pinakamababang sales*/
     }
 }
