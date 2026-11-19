@@ -36,40 +36,34 @@ public class CoffeeShopAnalyzer {
 
         System.out.println("Average Daily Sales: " + averageSales + " cups"); /* Ipapakita naman nito ang average
          sales ng bawat araw */
+        
+        int maxSales = weeklySales[0]; // Dito ginawang unang sales number ang pinaka unang mataas na sales
+        
+        int minSales = weeklySales[0]; // Dito  ginawa rin unang sales number ang unang pinakamababang sales
+        
+        String bestDay = daysOfWeek[0]; // Ginagawang unang araw ang panimulang best day
 
-        // Ginagawang unang sales number ang panimulang pinakamataas na sales
-        int maxSales = weeklySales[0];
+        
+        String worstDay = daysOfWeek[0];// Ginagawang unang araw ang panimulang worst day
+        
+        for (int i = 1; i < weeklySales.length; i++) { // Nagsisimula sa index 1 dahil na-check na natin ang index 0
 
-        // Ginagawang unang sales number ang panimulang pinakamababang sales
-        int minSales = weeklySales[0];
+            
+            if (weeklySales[i] > maxSales) { // Sa linyang ito sinusuri kung mas mataas ang sales sa kasalukuyang maximum
 
-        // Ginagawang unang araw ang panimulang best day
-        String bestDay = daysOfWeek[0];
+               
+                maxSales = weeklySales[i];  // Ina-update ang pinakamataas na sales kapag may mas mataas na nakita
 
-        // Ginagawang unang araw ang panimulang worst day
-        String worstDay = daysOfWeek[0];
-
-        // Nagsisimula sa index 1 dahil na-check na natin ang index 0
-        for (int i = 1; i < weeklySales.length; i++) {
-
-            // Sinusuri kung mas mataas ang sales sa kasalukuyang maximum
-            if (weeklySales[i] > maxSales) {
-
-                // Ina-update ang pinakamataas na sales kapag may mas mataas na nakita
-                maxSales = weeklySales[i];
-
-                // Ina-update ang pangalan ng araw na may pinakamataas na sales
-                bestDay = daysOfWeek[i];
+                
+                bestDay = daysOfWeek[i]; // Ina-update ang pangalan ng araw na may pinakamataas na sales
             }
+            
+            if (weeklySales[i] < minSales) { // Sinusuri kung mas mababa ang sales sa kasalukuyang minimum
 
-            // Sinusuri kung mas mababa ang sales sa kasalukuyang minimum
-            if (weeklySales[i] < minSales) {
-
-                // Ina-update ang pinakamababang sales kapag may mas mababa na nakita
-                minSales = weeklySales[i];
-
-                // Ina-update ang pangalan ng araw na may pinakamababang sales
-                worstDay = daysOfWeek[i];
+                
+                minSales = weeklySales[i]; // Ina-update ang pinakamababang sales kapag may mas mababa na nakita
+                
+                worstDay = daysOfWeek[i]; // Ina-update ang pangalan ng araw na may pinakamababang sales
             }
         }
 
